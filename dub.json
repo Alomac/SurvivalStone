@@ -1,0 +1,25 @@
+{
+	"authors": [
+		"ElectroLagro"
+	],
+	"copyright": "Copyright © 2025, ElectroLagro",
+	"dependencies": {
+		"raylib-d": "~>5.5.1"
+	},
+	"description": "A basic project in D",
+	"lflags-linux": [
+		"-rpath=$$ORIGIN"
+	],
+	"lflags-osx": [
+		"-rpath",
+		"@executable_path/"
+	],
+	"lflags-posix": [
+		"-L."
+	],
+	"libs": [
+		"raylib"
+	],
+	"license": "proprietary",
+	"name": "libmilagro"
+}
