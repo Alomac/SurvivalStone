@@ -1,5 +1,8 @@
 module Chunk;
 
+import Util;
+
+
 void generateChunk(Block block){
 
 	int chunkSize = 9;
@@ -41,12 +44,13 @@ void generateChunk(Block block){
 	// DrawCubeV(block.pos, block.size, block.color);
 }
 
-void generateChunk(BlockV2 block){
+BlockV2[] generateChunk(){
+	BlockV2[] chunkOut;
 
 	int chunkSize = 9;
 	int debugSize = 0;
 
-	int gap = cast(int)block.size.x;
+	int gap = 2;
 
 	int z = 0;
 	while(z < chunkSize){
@@ -56,25 +60,24 @@ void generateChunk(BlockV2 block){
 
 			int x = 0;
 			while( x < chunkSize) {
+				Color setclr;
 
 				if( y < 6) {
-					block.clr = Colors.GRAY;
+					setclr = Colors.GRAY;
 				} else {
-					block.clr = Colors.GREEN;
+					setclr = Colors.GREEN;
 				}
 
                 // Convert to working for BlockV2
 
-				// Vector3 bpos = {(gap + debugSize) * x, (gap + debugSize) * y, (gap + debugSize) * z};
-				// block.pos = bpos;
-				// DrawCubeV(block.pos, block.size, block.clr);
+				int px = (gap + debugSize) * x;
+				int py = (gap + debugSize) * y;
+				int pz = (gap + debugSize) * z;
+				BlockV2 block = new BlockV2(px, py, pz, false);
+				block.clr = setclr;
+				chunkOut ~= block;
 
 				x = x + 1;
-				if( block.clr == Colors.DARKGREEN) {
-					block.clr = Colors.LIME;
-				} else if( block.clr == Colors.LIME) {
-					block.clr = Colors.DARKGREEN;
-				}
 
 			}
 			y = y + 1;

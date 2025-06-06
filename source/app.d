@@ -8,7 +8,8 @@ void game(){
 	InitWindow(800, 600, "DLANG!");
 
 	// Block myBlock = Block.newblock(0, 0, 0);
-	BlockV2 otherblock = new BlockV2(false);
+	// BlockV2 otherblock = new BlockV2(false);
+	BlockV2[] myChunk = generateChunk();
 
 	Camera cam;
 	cam.position = Vector3(10, 10, 10);
@@ -30,7 +31,10 @@ void game(){
 		BeginMode3D(cam); //______________
 
 		// generateChunk(myBlock);
-		otherblock.drawWholeBlock();
+		// otherblock.drawWholeBlock();
+		foreach (BlockV2 block; myChunk){
+			block.drawWholeBlock();
+		}
 
 		// DrawGrid(16, myBlock.size.x);
 

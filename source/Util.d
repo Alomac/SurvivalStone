@@ -143,9 +143,9 @@ class BlockV2{
             DrawTriangle3D(vert_br, vert_tl, vert_bl, drawclr0);
             DrawTriangle3D(vert_br, vert_tr, vert_tl, drawclr1);
         }
-        
+
     }
-    
+
     struct Side_DOWN{
         Vector3 vert_br = {1 *X, 0 *Y, 1 *Z}; // Bottom right
         Vector3 vert_tl = {0 *X, 0 *Y, 0 *Z}; // Top left
@@ -180,7 +180,7 @@ class BlockV2{
         this.pos.x = xin;
         this.pos.y = yin;
         this.pos.z = zin;
-    
+
         this.X = this.pos.x;
         this.Y = this.pos.y;
         this.Z = this.pos.z;
