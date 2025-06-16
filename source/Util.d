@@ -61,7 +61,7 @@ class BlockV2{
         }
     }
 
-    struct Side_SOUTH{
+    struct Side_SOUTH{                                                     // REFACTOR SIDES WITHOUT STRUCTS!
         Vector3 vert_br = {1 *X, 0 *Y, 1 *Z}; // Bottom right
         Vector3 vert_tl = {0 *X, 1 *Y, 1 *Z}; // Top left
         Vector3 vert_bl = {0 *X, 0 *Y, 1 *Z}; // Bottom left
@@ -191,6 +191,10 @@ class BlockV2{
         WEST = Side_WEST();
         UP = Side_UP();
         DOWN = Side_DOWN();
+    }
+
+    void setcolor(Color clr){
+        this.clr = clr;
     }
 
 

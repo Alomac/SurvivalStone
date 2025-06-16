@@ -74,7 +74,7 @@ BlockV2[] generateChunk(){
 				int py = (gap + debugSize) * y;
 				int pz = (gap + debugSize) * z;
 				BlockV2 block = new BlockV2(px, py, pz, false);
-				block.clr = setclr;
+				block.setcolor(setclr);
 				chunkOut ~= block;
 
 				x = x + 1;
